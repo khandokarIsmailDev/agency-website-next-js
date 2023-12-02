@@ -1,17 +1,19 @@
 import './globals.css'
 import React from "react";
-import NextTopLoader from 'nextjs-toploader';
 import MenuNav from "@/components/MenuNav";
+import RootProvider from "@/components/RootProvider.";
+import Footer from "@/components/Footer";
 
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body >
-      <NextTopLoader/>
-      <MenuNav/>
-      {children}
-
+      <RootProvider>
+          <MenuNav/>
+          {children}
+          <Footer/>
+      </RootProvider>
       </body>
     </html>
   )

@@ -5,7 +5,6 @@ import WorkList from "@/components/WorkList";
 import State from "@/components/State";
 import FeatureProject from "@/components/FeatureProject";
 import Subscribe from "@/components/Subscribe";
-import Footer from "@/components/Footer";
 
 const Page = () => {
     return (
@@ -16,7 +15,6 @@ const Page = () => {
             <State/>
             <FeatureProject/>
             <Subscribe/>
-            <Footer/>
 
         </div>
     );

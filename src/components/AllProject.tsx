@@ -1,6 +1,22 @@
 import React from 'react';
+import axios from "axios";
+interface Project {
+    id:number;
+    title:string;
+    image:string;
+}
 
-const AllProject:React.FC = () => {
+async function getData(){
+    let res = await axios(process.env.BASE_URL+`api/AllProject`)
+    if(!res.data){
+        throw new Error("Project api not calling")
+    }
+    return res.data
+}
+
+const AllProject:React.FC =async () => {
+    let data = await getData()
+    console.log(data[0])
     return (
         <section>
             <div className="service py-20">
@@ -12,78 +28,27 @@ const AllProject:React.FC = () => {
                         </h1>
                     </div>
                     <div className="service-grid grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
-                            <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
-                                <img
-                                    src="/image/feature/copy.jpg"
-                                    className=" rounded-2xl object-cover w-full"
-                                    alt="image"
-                                />
-                            </div>
-                            <h1 className="font-semibold text-2xl">
-                                Build &amp; Launch without problems
-                            </h1>
-                        </div>
-                        <div className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
-                            <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
-                                <img
-                                    src="/image/feature/copy.jpg"
-                                    className=" rounded-2xl object-cover w-full"
-                                    alt="image"
-                                />
-                            </div>
-                            <h1 className="font-semibold text-2xl">
-                                Build &amp; Launch without problems
-                            </h1>
-                        </div>
-                        <div className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
-                            <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
-                                <img
-                                    src="/image/service/service1.webp"
-                                    className=" rounded-2xl object-cover w-full"
-                                    alt="image"
-                                />
-                            </div>
-                            <h1 className="font-semibold text-2xl">
-                                Build &amp; Launch without problems
-                            </h1>
-                        </div>
-                        <div className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
-                            <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
-                                <img
-                                    src="/image/service/service1.webp"
-                                    className=" rounded-2xl object-cover w-full"
-                                    alt="image"
-                                />
-                            </div>
-                            <h1 className="font-semibold text-2xl">
-                                Build &amp; Launch without problems
-                            </h1>
-                        </div>
-                        <div className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
-                            <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
-                                <img
-                                    src="/image/service/service1.webp"
-                                    className=" rounded-2xl object-cover w-full"
-                                    alt="image"
-                                />
-                            </div>
-                            <h1 className="font-semibold text-2xl">
-                                Build &amp; Launch without problems
-                            </h1>
-                        </div>
-                        <div className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
-                            <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
-                                <img
-                                    src="/image/service/service1.webp"
-                                    className=" rounded-2xl object-cover w-full"
-                                    alt="image"
-                                />
-                            </div>
-                            <h1 className="font-semibold text-2xl">
-                                Build &amp; Launch without problems
-                            </h1>
-                        </div>
+
+                        {
+                            data.map((project:Project) =>{
+                                return (
+                                    <div key={project['id']} className="service-grid-one transition-all duration-500 hover:scale-75 mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-5 rounded-2xl shadow-lg shadow-500/50 ">
+                                        <div className="service-grid-one-img mb-7 lg:flex lg:flex-wrap">
+                                            <img
+                                                src={project['image']}
+                                                className=" rounded-2xl object-cover w-full"
+                                                alt="image"
+                                            />
+                                        </div>
+                                        <h1 className="font-semibold text-2xl">
+                                            {project['title']}
+                                        </h1>
+                                    </div>
+                                )
+                            })
+                        }
+
+
                     </div>
                 </div>
             </div>
