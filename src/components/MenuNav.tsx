@@ -20,17 +20,17 @@ const MenuNav:React.FC= () => {
             navUl.classList.toggle('scale-0');
         }
 
-        let navChangeClose = document.getElementById('navChangeClose');
         let navChangeMenu = document.getElementById('navChangeMenu');
+        let navChangeClose = document.getElementById('navChangeClose');
+
 
         if (navChangeMenu) {
-            navChangeMenu.classList.toggle('scale-0');
-            navChangeMenu.classList.toggle('hidden');
+            navChangeMenu.classList.toggle('!hidden');
+            navChangeClose.classList.toggle('!hidden')
         }
 
         if (navChangeClose) {
-            navChangeClose.classList.toggle('scale-100');
-            navChangeClose.classList.toggle('hidden');
+            navChangeMenu.classList.toggle('!block');
         }
     }
 
@@ -73,7 +73,7 @@ const MenuNav:React.FC= () => {
 
                             <IonIcon
                                 name="close-outline"
-                                className="duration-500 scale-0 !hidden"
+                                className="duration-500 !hidden"
                                 id="navChangeClose"
                             />
                         </button>

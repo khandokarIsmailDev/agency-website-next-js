@@ -52,7 +52,7 @@ const Footer = async () => {
                                 <div className="mobileFooter-icon flex items-center justify-center">
                                     <div className="text-center cursor-pointer">
                                         <IonIcon
-                                            className="w-8 h-8 text-center text-[#20B15A]"
+                                            className="!w-8 !h-8 text-center text-[#20B15A]"
                                             name="logo-snapchat"
                                         />
                                         <p className="text-sm font-medium">CHAT</p>
@@ -61,7 +61,7 @@ const Footer = async () => {
                                 <div className="mobileFooter-icon flex items-center justify-center">
                                     <div className="text-center cursor-pointer">
                                         <IonIcon
-                                            className="w-8 h-8 text-center pl-2 text-[#20B15A]"
+                                            className="!w-8 !h-8 text-center pl-2 text-[#20B15A]"
                                             name="logo-twitter"
                                         />
                                         <p className="text-sm font-medium">TWITTER</p>
