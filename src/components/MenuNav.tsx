@@ -28,7 +28,7 @@ const MenuNav:React.FC= () => {
         <nav>
             <div className="nav z-10 relative ">
                 <div className="container w-3/4 mx-auto h-16 lg:h-28 pb-1 flex justify-between items-center ">
-                    <a href="#" className="">
+                    <Link href={'/'}>
                         <svg
                             width={155}
                             height={23}
@@ -45,7 +45,7 @@ const MenuNav:React.FC= () => {
                                 fill="#F55F1D"
                             />
                         </svg>
-                    </a>
+                    </Link>
                     <div className="nav-menu lg:w-3/4 2xl:w-2/3">
                         <button
                             id="navHamburg"
