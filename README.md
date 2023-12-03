@@ -22,8 +22,13 @@
 14) The TestimonialList data will come dynamically on the Testimonial Page. 
 15) Other sections on the Testimonial Page will be static.
 
+# Challenges
+#### I never use Typescript. but i learned Typescript. This is the First Project i use typescript. That was the most challenging for me
+
+
 ### Here is Figma File Link 
 https://www.figma.com/file/LXMrQdg2ayTqxvXhASl2yi/Design-Agency-Web-Landing-Page-(Community)?type=design&node-id=0-1&mode=design&t=EgWrVF3e7Z8NAoy2-0
+
 
 
 ### Api Documention 
