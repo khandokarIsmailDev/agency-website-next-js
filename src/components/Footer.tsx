@@ -1,5 +1,6 @@
 import React from 'react';
 import IonIcon from "@reacticons/ionicons";
+import Link from "next/link";
 
 async function getData(){
     const res = await fetch(process.env.BASE_URL+`api/SocialLink`)
@@ -143,19 +144,19 @@ const Footer = async () => {
                                     <h3 className="text-xl font-medium text-white mb-5">Quick Links</h3>
                                     <ul className="text-white ">
                                         <li className="my-5 transition-all duration-500 hover:text-orange-500 hover:-translate-x-6">
-                                            <a href="#" className="">
+                                            <Link href={'/service'}>
                                                 Services
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li className="my-5 transition-all duration-500 hover:text-orange-500 hover:-translate-x-6">
-                                            <a href="#" className="">
-                                                Portfolio
-                                            </a>
+                                            <Link href={'/projects'}>
+                                                Projects
+                                            </Link>
                                         </li>
                                         <li className="my-5 transition-all duration-500 hover:text-orange-500 hover:-translate-x-6">
-                                            <a href="#" className="">
-                                                About Us
-                                            </a>
+                                            <Link href={'/testimonials'}>
+                                                Testimonials
+                                            </Link>
                                         </li>
                                         <li className="my-5 transition-all duration-500 hover:text-orange-500 hover:-translate-x-6">
                                             <a href="#" className="">

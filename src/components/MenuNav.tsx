@@ -4,8 +4,15 @@
 import React from 'react';
 import IonIcon from '@reacticons/ionicons';
 import Link from "next/link";
+import {usePathname} from "next/navigation";
+
+
 
 const MenuNav:React.FC= () => {
+
+    const pathName :string = usePathname()
+
+
     function Menu() {
         let navUl = document.getElementById('mainMenu');
         if (navUl) {
@@ -75,19 +82,19 @@ const MenuNav:React.FC= () => {
                             className="opacity-0 lg:opacity-100 lg:flex justify-between lg:items-center lg:relative  lg:scale-100 absolute scale-0 transition-all ease-in duration-500 nav-menu-ul bg-white lg:bg-opacity-0 top-15  left-0 w-full pl-14 lg:pl-0 text-left py-4 lg:py-0 font-medium text-lg"
                         >
                             <li className="p-1.5 hover:scale-105 transition-all duration-500 hover:shadow-lg hover:shadow-gray-500/50 hover:bg-white hover:rounded-lg hover:text-[#20B15A] ">
-                                <Link href={'/'} className="lg:p-1">Home</Link>
+                                <Link href={'/'} className="lg:p-1" >Home</Link>
                             </li>
                             <li className="p-1.5 hover:scale-105 transition-all duration-500 hover:shadow-lg hover:shadow-gray-500/50 hover:bg-white hover:rounded-lg hover:text-[#20B15A] ">
-                                <Link href={'/team'} className="lg:p-1">Team</Link>
+                                <Link href={'/team'} className={pathName === '/team' ? 'text-[#20B15A] lg:p-1' : 'lg:p-1'} >Team</Link>
                             </li>
                             <li className="p-1.5 hover:scale-105 transition-all duration-500 hover:shadow-lg hover:shadow-gray-500/50 hover:bg-white hover:rounded-lg hover:text-[#20B15A] ">
-                                <Link href={'/service'} className="lg:p-1">Service</Link>
+                                <Link href={'/service'} className={pathName === '/service' ? 'text-[#20B15A] lg:p-1' : 'lg:p-1'} >Service</Link>
                             </li>
                             <li className="p-1.5 hover:scale-105 transition-all duration-500 hover:shadow-lg hover:shadow-gray-500/50 hover:bg-white hover:rounded-lg hover:text-[#20B15A] ">
-                                <Link href={'/projects'} className="lg:p-1">Projects</Link>
+                                <Link href={'/projects'} className={pathName === '/projects' ? 'text-[#20B15A] lg:p-1' : 'lg:p-1'} >Projects</Link>
                             </li>
                             <li className="p-1.5 hover:scale-105 transition-all duration-500 hover:shadow-lg hover:shadow-gray-500/50 hover:bg-white hover:rounded-lg hover:text-[#20B15A] ">
-                                <Link href={'/testimonials'} className="lg:p-1">Testimonials</Link>
+                                <Link href={'/testimonials'} className={pathName === '/testimonials' ? 'text-[#20B15A] lg:p-1' : 'lg:p-1'} >Testimonials</Link>
                             </li>
                             <li className=" pb-5 p-1.5 lg:pb-0   ">
                                 <a

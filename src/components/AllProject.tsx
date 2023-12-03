@@ -16,7 +16,6 @@ async function getData(){
 
 const AllProject:React.FC =async () => {
     let data = await getData()
-    console.log(data[0])
     return (
         <section>
             <div className="service py-20">
