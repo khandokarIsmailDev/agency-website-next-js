@@ -18,7 +18,7 @@ const Brand:React.FC = async () => {
         <section>
             <div className="brand bg-white py-10 mb">
                 <div className="container w-3/4 mx-auto">
-                    <div className="brand-grid grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <div className="brand-grid grid grid-cols-1 lg:grid-cols-4 gap-8 2xl:gap-64">
                         {
                             data.map((value:Brand)=>{
                                 return(
