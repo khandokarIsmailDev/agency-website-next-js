@@ -15,27 +15,10 @@ const MenuNav:React.FC= () => {
 
     function Menu() {
         let navUl = document.getElementById('mainMenu');
-        let number:number = 0;
         if (navUl) {
             navUl.classList.toggle('opacity-0');
             navUl.classList.toggle('scale-0');
         }
-
-        let navChangeMenu = document.getElementById('navChangeMenu');       // 0
-        let navChangeClose = document.getElementById('navChangeClose');  // 1
-
-
-        if (number === 0) {
-            navChangeMenu.classList.toggle('!hidden');
-            navChangeClose.classList.toggle('!hidden');
-            number = 1
-        }
-
-        if (number===1) {
-            navChangeMenu.classList.toggle('!block');
-            number=0
-        }
-
     }
 
 
@@ -75,11 +58,6 @@ const MenuNav:React.FC= () => {
                                 id="navChangeMenu"
                             />
 
-                            <IonIcon
-                                name="close-outline"
-                                className="duration-500 !hidden"
-                                id="navChangeClose"
-                            />
                         </button>
                         <ul
                             id="mainMenu"
