@@ -39,7 +39,7 @@ const AllService:React.FC = async () => {
                         {
                             data.map((service : Service)=>{
                                 return(
-                                    <div className="service-grid-one mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-0 rounded-lg shadow-lg shadow-500/50 ">
+                                    <div key={service['id']} className="service-grid-one mx-auto border-[1px] border-gray-100 px-8 pt-10 pb-0 rounded-lg shadow-lg shadow-500/50 ">
                                         <h1 className="font-semibold text-2xl">
                                             {service['title']}
                                         </h1>
