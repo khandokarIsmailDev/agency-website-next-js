@@ -48,7 +48,7 @@ const Team:React.FC = async() => {
                                                     className=" rounded-t-2xl object-cover w-full h-96"
                                                     alt="image"
                                                 />
-                                                <div className="team-member-social flex justify-between  bg-white border-[1px] px-5 py-2  box-border w-1/3 h-[12%]   absolute rounded-l-full rounded-r-full bottom-[5%] left-[35%]">
+                                                <div className="team-member-social flex justify-between  bg-white border-[1px] px-5 py-2  box-border sm:w-40 h-[12%]   absolute rounded-l-full rounded-r-full bottom-[5%] left-[35%]">
                                                     <a href={`https://${team['facebook']}`} target="none">
                                                         <svg
                                                             className="w-7 h-6 my-1 transition-all duration-500 hover:scale-150 hover:shadow-lg hover:shadow-gray-500/50 hover:rounded-lg p-[0.313rem] border-r-[1px]"
